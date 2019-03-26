@@ -52,7 +52,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="3d2927a93a1f87cf962d305c2de4662f"/>
+            android:value="d2e34abe930a6763ec1ba741c8c09739"/>
         <activity android:name="com.share.found.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
