@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include layout="@layout/app_toolbar"/>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="#e3e3e3" />
+        
+        <EditText
+            android:id="@+id/et_write_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@null"
+            android:drawablePadding="8dp"
+            android:hint="请输入新的密码"
+            android:padding="5dp"
+            android:paddingLeft="12dp"
+            android:singleLine="true"
+            android:textColor="#ff363636"
+            android:textSize="16sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="16dip"
+            android:layout_marginTop="24dip"
+            android:orientation="horizontal"
+            android:weightSum="5" >
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_phone_reg_bg"
+                android:text="确认修改"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+</LinearLayout>
