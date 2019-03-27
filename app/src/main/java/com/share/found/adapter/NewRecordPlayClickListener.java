@@ -18,7 +18,7 @@ import cn.bmob.newim.core.BmobDownloadManager;
 import cn.bmob.v3.BmobUser;
 
 /**
- * @author xxx
+ * @author CQU_20161586 ZhaoYimin
  */
 public class NewRecordPlayClickListener implements View.OnClickListener {
 

@@ -46,12 +46,12 @@ public class MessageHandler extends BmobIMMessageHandler {
     public void onOfflineReceive(final OfflineMessageEvent event) {
         //每次调用connect方法时会查询一次离线消息，如果有，此方法会被调用
         Map<String, List<MessageEvent>> map = event.getEventMap();
-        Logger.i("有" + map.size() + "个用户发来离线消息");
+        Logger.i("Have" + map.size() + "users sent you message");
         //挨个检测下离线消息所属的用户的信息是否需要更新
         for (Map.Entry<String, List<MessageEvent>> entry : map.entrySet()) {
             List<MessageEvent> list = entry.getValue();
             int size = list.size();
-            Logger.i("用户" + entry.getKey() + "发来" + size + "条消息");
+            Logger.i("User" + entry.getKey() + "sent" + size + "message");
             for (int i = 0; i < size; i++) {
                 //处理每条消息
                 executeMessage(list.get(i));
@@ -105,7 +105,7 @@ public class MessageHandler extends BmobIMMessageHandler {
             //这里可以是应用图标，也可以将聊天头像转成bitmap
             Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
             BmobNotificationManager.getInstance(context).showNotification(largeIcon,
-                    info.getName(), msg.getContent(), "您有一条新消息", pendingIntent);
+                    info.getName(), msg.getContent(), "You have a new message", pendingIntent);
         } else {
             //直接发送消息事件
             EventBus.getDefault().post(event);

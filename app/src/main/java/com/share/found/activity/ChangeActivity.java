@@ -39,12 +39,12 @@ public class ChangeActivity extends BaseActivity {
         btnLogin = findViewById(R.id.btn_login);
         switch (type){
             case "phone":
-                onSetTitle("修改手机号");
-                etWritePwd.setHint("请输入手机号");
+                onSetTitle("Change Phone Number");
+                etWritePwd.setHint("Enter Phone Number");
                 break;
             case "password":
-                onSetTitle("修改密码");
-                etWritePwd.setHint("请输入密码");
+                onSetTitle("Change Password");
+                etWritePwd.setHint("Enter Password");
                 break;
 
         }
@@ -54,7 +54,7 @@ public class ChangeActivity extends BaseActivity {
                 String pwd = etWritePwd.getText().toString().trim();
                 if (type.equals("phone")){
                     if (TextUtils.isEmpty(pwd)) {
-                        Toast.makeText(context, "新的手机号不能为空", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Can NOT be empty", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     BmobUser newUser = new BmobUser();
@@ -64,17 +64,17 @@ public class ChangeActivity extends BaseActivity {
                         @Override
                         public void done(BmobException e) {
                             if(e==null){
-                                onToast("更新用户信息成功");
+                                onToast("Update Successful");
                                 finish();
                             }else{
-                                onToast("更新用户信息失败:" + e.getMessage());
+                                onToast("Update Failed:" + e.getMessage());
                             }
                         }
                     });
                 }
                 if (type.equals("password")){
                     if (TextUtils.isEmpty(pwd)) {
-                        Toast.makeText(context, "新密码不能为空", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Can NOT be empty", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     BmobUser newUser = new BmobUser();
@@ -84,10 +84,10 @@ public class ChangeActivity extends BaseActivity {
                         @Override
                         public void done(BmobException e) {
                             if(e==null){
-                                onToast("更新用户信息成功");
+                                onToast("Update Successful");
                                 finish();
                             }else{
-                                onToast("更新用户信息失败:" + e.getMessage());
+                                onToast("Update Failed:" + e.getMessage());
                             }
                         }
                     });

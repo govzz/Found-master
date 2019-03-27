@@ -59,7 +59,7 @@ public class ReleaseActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_release);
-        onSetTitle("发布");
+        onSetTitle("Release");
         initView();
     }
 
@@ -99,19 +99,19 @@ public class ReleaseActivity extends BaseActivity {
                 String time = tv_time.getText().toString();
                 String address = tv_address.getText().toString().trim();
                 if (TextUtils.isEmpty(title)||TextUtils.isEmpty(content)){
-                    onToast("标题和内容不能为空");
+                    onToast("Title and content can not be empty");
                     return;
                 }
                 if (TextUtils.isEmpty(phone)){
-                    onToast("请输入联系方式");
+                    onToast("Enter your Phone number");
                     return;
                 }
                 if (TextUtils.isEmpty(address)){
-                    onToast("请选择地址");
+                    onToast("Select Address");
                     return;
                 }
                 if (!fileSuccess){
-                    onToast("请选择要分享的图片");
+                    onToast("Choose Photo");
                 }
 
 
@@ -123,14 +123,14 @@ public class ReleaseActivity extends BaseActivity {
             public void onClick(View view) {
                 final EditText editText = new EditText(ReleaseActivity.this);
                 new AlertDialog.Builder(ReleaseActivity.this)
-                        .setTitle("添加标签")
+                        .setTitle("Add tags")
                         .setView(editText)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String text = editText.getText().toString().trim();
                                 if (TextUtils.isEmpty(text)){
-                                    onToast("请输入标签");
+                                    onToast("Enter Tags");
                                     return;
                                 }else{
                                     tag.add(text);
@@ -139,7 +139,7 @@ public class ReleaseActivity extends BaseActivity {
                                 }
 
                             }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -157,7 +157,7 @@ public class ReleaseActivity extends BaseActivity {
                         tv_time.setText(getTime(date));
                     }
                 }) .setType(new boolean[]{true, true, true, true, true, false})
-                        .setLabel("年","月","日","时","分","")
+                        .setLabel("YEAR","MONTH","DAY","HOUR","MINUTE","")
                         .build();
                 pvTime.show();
             }
@@ -175,7 +175,7 @@ public class ReleaseActivity extends BaseActivity {
         }
     }
     private void upLoad(String title, String time,String address,BmobGeoPoint bmobGeoPoint,String phone) {
-        showProgressDialog(ReleaseActivity.this,"发布中");
+        showProgressDialog(ReleaseActivity.this,"Release in progress");
         LostAndFound lostAndFound =  new LostAndFound();
         lostAndFound.setTag(tag);
         lostAndFound.setTitle(title);
@@ -190,11 +190,11 @@ public class ReleaseActivity extends BaseActivity {
             public void done(String s, BmobException e) {
                 hidProgressDialog();
                 if (e==null){
-                    onToast("发布成功");
+                    onToast("Release Successfully");
                     EventBus.getDefault().post(new HomEvent());
                     finish();
                 }else{
-                    onToast("发布失败");
+                    onToast("Release Failed");
                 }
             }
         });
@@ -233,13 +233,13 @@ public class ReleaseActivity extends BaseActivity {
             @Override
             public void done(BmobException e) {
                 if(e==null){
-                    onToast("图片上传成功");
+                    onToast("Update Successfully");
                     Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/share/"
                             + imageName);
                     iv_img.setImageBitmap(bitmap);
                     fileSuccess = true;
                 }else{
-                    onToast("图片上传失败");
+                    onToast("Update Failed");
                 }
             }
         });

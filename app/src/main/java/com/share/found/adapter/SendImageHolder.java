@@ -65,7 +65,7 @@ public class SendImageHolder extends BaseViewHolder {
               .placeholder(R.drawable.defalut_head)
               .into(iv_avatar);
     }
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
     String time = dateFormat.format(msg.getCreateTime());
     tv_time.setText(time);
     //
@@ -81,7 +81,7 @@ public class SendImageHolder extends BaseViewHolder {
         tv_send_status.setVisibility(View.INVISIBLE);
     } else {
         tv_send_status.setVisibility(View.VISIBLE);
-        tv_send_status.setText("已发送");
+        tv_send_status.setText("Sent");
         iv_fail_resend.setVisibility(View.GONE);
         progress_load.setVisibility(View.GONE);
     }
@@ -99,13 +99,13 @@ public class SendImageHolder extends BaseViewHolder {
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
     iv_picture.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击图片:"+(TextUtils.isEmpty(message.getRemoteUrl()) ? message.getLocalPath():message.getRemoteUrl())+"");
+        toast("Click:"+(TextUtils.isEmpty(message.getRemoteUrl()) ? message.getLocalPath():message.getRemoteUrl())+"");
         if(onRecyclerViewListener!=null){
           onRecyclerViewListener.onItemClick(getAdapterPosition());
         }
@@ -138,7 +138,7 @@ public class SendImageHolder extends BaseViewHolder {
           public void done(BmobIMMessage msg, BmobException e) {
             if (e == null) {
               tv_send_status.setVisibility(View.VISIBLE);
-              tv_send_status.setText("已发送");
+              tv_send_status.setText("Sent");
               iv_fail_resend.setVisibility(View.GONE);
               progress_load.setVisibility(View.GONE);
             } else {

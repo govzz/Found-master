@@ -48,7 +48,7 @@ public class TrendDetailActivity extends BaseActivity implements SwipeRefreshLay
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trend);
-        onSetTitle("详情");
+        onSetTitle("Details");
         SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
         userId = sp.getString("userId","");
         init();
@@ -150,9 +150,9 @@ public class TrendDetailActivity extends BaseActivity implements SwipeRefreshLay
                     getCommentList();
                     etComment.setText("");
                     etComment.clearFocus();
-                    Toast.makeText(TrendDetailActivity.this,"评论成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TrendDetailActivity.this,"Send Successfully", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(TrendDetailActivity.this,"网络错误",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TrendDetailActivity.this,"Send Failed",Toast.LENGTH_SHORT).show();
                 }
             }
         });

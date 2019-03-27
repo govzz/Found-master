@@ -16,7 +16,6 @@ import com.share.found.base.BaseActivity;
 import butterknife.ButterKnife;
 
 /**
- * 建议使用BaseRecyclerAdapter
  * @param <T>
  */
 public abstract class BaseViewHolder<T> extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {

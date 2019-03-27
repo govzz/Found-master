@@ -27,7 +27,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        onSetTitle("注册");
+        onSetTitle("Sign in");
         init();
     }
 
@@ -49,22 +49,22 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 String pwd = etPwd.getText().toString().trim();
                 String pwdAgain = etRepwd.getText().toString().trim();
                 if (TextUtils.isEmpty(name)){
-                    onToast("用户名不能为空");
+                    onToast("User name can NOT be empty");
                     return;
                 }
                 if (TextUtils.isEmpty(phone)){
-                    onToast("电话不能为空");
+                    onToast("Phone Number can NOT be empty");
                     return;
                 }
                 if (TextUtils.isEmpty(pwd)||TextUtils.isEmpty(pwdAgain)){
-                    onToast("密码不能为空");
+                    onToast("Password can NOT be empty");
                     return;
                 }
                 if (!pwd.equals(pwdAgain)){
-                    onToast("2次密码不一致");
+                    onToast("Password do not match");
                     return;
                 }
-                showProgressDialog(RegisterActivity.this,"注册中...");
+                showProgressDialog(RegisterActivity.this,"Sign up...");
                 User user = new User();
                 user.setUsername(name);
                 user.setMobilePhoneNumber(phone);
@@ -74,10 +74,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     public void done(BmobUser bmobUser, BmobException e) {
                         hidProgressDialog();
                         if (e==null){
-                            onToast("注册成功");
+                            onToast("Sign up Successfully");
                             finish();
                         }else{
-                            onToast("注册失败"+e.getLocalizedMessage());
+                            onToast("Sing up Failed"+e.getLocalizedMessage());
                         }
                     }
                 });

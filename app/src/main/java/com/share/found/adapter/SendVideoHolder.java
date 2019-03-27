@@ -66,7 +66,7 @@ public class SendVideoHolder extends BaseViewHolder implements View.OnClickListe
 
     String time = dateFormat.format(message.getCreateTime());
     String content = message.getContent();
-    tv_message.setText("发送的视频文件："+content);
+    tv_message.setText("Video file："+content);
     tv_time.setText(time);
 
     int status =message.getSendStatus();
@@ -84,7 +84,7 @@ public class SendVideoHolder extends BaseViewHolder implements View.OnClickListe
     tv_message.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击"+message.getContent());
+        toast("Click"+message.getContent());
         if(onRecyclerViewListener!=null){
           onRecyclerViewListener.onItemClick(getAdapterPosition());
         }
@@ -104,7 +104,7 @@ public class SendVideoHolder extends BaseViewHolder implements View.OnClickListe
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
 
@@ -124,7 +124,7 @@ public class SendVideoHolder extends BaseViewHolder implements View.OnClickListe
           public void done(BmobIMMessage msg, BmobException e) {
             if(e==null){
               tv_send_status.setVisibility(View.VISIBLE);
-              tv_send_status.setText("已发送");
+              tv_send_status.setText("Sent");
               iv_fail_resend.setVisibility(View.GONE);
               progress_load.setVisibility(View.GONE);
             }else{

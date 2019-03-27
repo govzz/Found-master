@@ -43,13 +43,14 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:clickable="false">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="手机号码"
+            android:text="Phone Number"
             android:textColor="#353535"
             android:textSize="18sp" />
 
@@ -85,13 +86,14 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:clickable="false">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="密码修改"
+            android:text="Set Password"
             android:textColor="#353535"
             android:textSize="18sp" />
 
@@ -117,13 +119,14 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:clickable="false">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="我的发布"
+            android:text="Lunch"
             android:textColor="#353535"
             android:textSize="18sp" />
 
@@ -149,13 +152,14 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:clickable="false">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="我的会话"
+            android:text="Conversations"
             android:textColor="#353535"
             android:textSize="18sp" />
 
@@ -181,13 +185,14 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:clickable="false">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="退出登录"
+            android:text="Log Out"
             android:textColor="#353535"
             android:textSize="18sp" />
 

@@ -56,7 +56,7 @@ public class SearchActivity extends BaseActivity {
         context = this;
         setContentView(R.layout.activity_myserach);
         ButterKnife.bind(this);
-        onSetTitle("搜索");
+        onSetTitle("Search");
         initView();
     }
 
@@ -69,7 +69,7 @@ public class SearchActivity extends BaseActivity {
         adapter = new ImgAdapter(SearchActivity.this, list);
         recyclerview.setAdapter(adapter);
         mTvRight.setVisibility(View.VISIBLE);
-        mTvRight.setText("搜索");
+        mTvRight.setText("Search");
         adapter.setOnItemClickListener(new ImgAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -83,7 +83,7 @@ public class SearchActivity extends BaseActivity {
 
     private void getCommentList(final String content) {
         if (TextUtils.isEmpty(content)) {
-            onToast("条件为空");
+            onToast("The condition is empty");
             return;
         }
         BmobQuery<LostAndFound> query = new BmobQuery<>();
@@ -120,7 +120,7 @@ public class SearchActivity extends BaseActivity {
     public void onClick() {
         String content = mEtWritePwd.getText().toString().trim();
         if (TextUtils.isEmpty(content)) {
-            Toast.makeText(context, "请输入关键字", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Enter key words", Toast.LENGTH_SHORT).show();
             return;
         }
         getCommentList(content);

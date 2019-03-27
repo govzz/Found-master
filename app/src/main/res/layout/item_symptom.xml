@@ -8,11 +8,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:padding="20dp"
         android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="感冒"
+        android:padding="20dp"
+        android:text="cold"
         android:textColor="@color/colortext" />
 
 </LinearLayout>

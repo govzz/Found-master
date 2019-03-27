@@ -42,19 +42,19 @@ public class UserModel extends BaseModel {
      */
     public void register(String username, String password, String pwdagain, final LogInListener listener) {
         if (TextUtils.isEmpty(username)) {
-            listener.done(null, new BmobException(CODE_NULL, "请填写用户名"));
+            listener.done(null, new BmobException(CODE_NULL, "Enter user name."));
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            listener.done(null, new BmobException(CODE_NULL, "请填写密码"));
+            listener.done(null, new BmobException(CODE_NULL, "Enter password."));
             return;
         }
         if (TextUtils.isEmpty(pwdagain)) {
-            listener.done(null, new BmobException(CODE_NULL, "请填写确认密码"));
+            listener.done(null, new BmobException(CODE_NULL, "Account or password error. Enter again."));
             return;
         }
         if (!password.equals(pwdagain)) {
-            listener.done(null, new BmobException(CODE_NULL, "两次输入的密码不一致，请重新输入"));
+            listener.done(null, new BmobException(CODE_NULL, "Different password. Enter again."));
             return;
         }
         final User user = new User();
@@ -81,11 +81,11 @@ public class UserModel extends BaseModel {
      */
     public void login(String username, String password, final LogInListener listener) {
         if (TextUtils.isEmpty(username)) {
-            listener.done(null, new BmobException(CODE_NULL, "请填写用户名"));
+            listener.done(null, new BmobException(CODE_NULL, "Enter user name."));
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            listener.done(null, new BmobException(CODE_NULL, "请填写密码"));
+            listener.done(null, new BmobException(CODE_NULL, "Enter password."));
             return;
         }
         final User user = new User();
@@ -144,7 +144,7 @@ public class UserModel extends BaseModel {
                     if (list != null && list.size() > 0) {
                         listener.done(list, e);
                     } else {
-                        listener.done(list, new BmobException(CODE_NULL, "查无此人"));
+                        listener.done(list, new BmobException(CODE_NULL, "No result"));
                     }
                 } else {
                     listener.done(list, e);
@@ -171,7 +171,7 @@ public class UserModel extends BaseModel {
                             if (list != null && list.size() > 0) {
                                 listener.done(list.get(0), null);
                             } else {
-                                listener.done(null, new BmobException(000, "查无此人"));
+                                listener.done(null, new BmobException(000, "No result"));
                             }
                         } else {
                             listener.done(null, e);

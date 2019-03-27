@@ -17,7 +17,7 @@ import cn.bmob.newim.bean.BmobIMMessage;
 import cn.bmob.newim.bean.BmobIMUserInfo;
 
 /**
- * 接收到的视频类型--这是举个例子，并没有展示出视频缩略图等信息，开发者可自行设置
+ * 接收到的视频类型--这是举个例子，并没有展示出视频缩略图等信息
  */
 public class ReceiveVideoHolder extends BaseViewHolder {
 
@@ -42,7 +42,7 @@ public class ReceiveVideoHolder extends BaseViewHolder {
   @Override
   public void bindData(Object o) {
     final BmobIMMessage message = (BmobIMMessage)o;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
     String time = dateFormat.format(message.getCreateTime());
     tv_time.setText(time);
     final BmobIMUserInfo info = message.getBmobIMUserInfo();
@@ -55,18 +55,18 @@ public class ReceiveVideoHolder extends BaseViewHolder {
               .into(iv_avatar);
     }
     String content =  message.getContent();
-    tv_message.setText("接收到的视频文件："+content);
+    tv_message.setText("Video received："+content);
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
 
     tv_message.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          toast("点击"+message.getContent());
+          toast("Click"+message.getContent());
           if(onRecyclerViewListener!=null){
             onRecyclerViewListener.onItemClick(getAdapterPosition());
           }

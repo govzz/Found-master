@@ -33,20 +33,20 @@
 
     <EditText
         android:id="@+id/edit_msg"
-        android:textSize="@dimen/text_size_medium"
-        android:layout_marginLeft="6dp"
-        android:textColor="@color/color_1e1e1e"
-        android:hint="请输入新消息"
-        android:textColorHint="@color/color_b4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
         android:layout_weight="1.0"
-        android:gravity="left|center"
-        android:lineSpacingExtra="@dimen/margin_3"
         android:background="@drawable/drawable_edit_normal"
+        android:gravity="left|center"
+        android:hint="Enter new message"
         android:imeOptions="flagNoExtractUi"
+        android:lineSpacingExtra="@dimen/margin_3"
         android:minHeight="@dimen/height_40"
-        android:padding="@dimen/margin_5"/>
+        android:padding="@dimen/margin_5"
+        android:textColor="@color/color_1e1e1e"
+        android:textColorHint="@color/color_b4"
+        android:textSize="@dimen/text_size_medium" />
 
     <Button
         android:id="@+id/btn_speak"

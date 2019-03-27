@@ -17,21 +17,21 @@
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:background="#e3e3e3" />
-        
-        <EditText
-            android:id="@+id/et_write_pwd"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@null"
-            android:drawablePadding="8dp"
-            android:hint="请输入新的密码"
-            android:padding="5dp"
-            android:paddingLeft="12dp"
-            android:singleLine="true"
-            android:textColor="#ff363636"
-            android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/et_write_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:drawablePadding="8dp"
+        android:hint="Enter New Password"
+        android:padding="5dp"
+        android:paddingLeft="12dp"
+        android:singleLine="true"
+        android:textColor="#ff363636"
+        android:textSize="16sp" />
 
 
     <View
@@ -53,10 +53,10 @@
 
             <Button
                 android:id="@+id/btn_login"
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_phone_reg_bg"
-                android:text="确认修改"
+                android:text="Confirm"
                 android:textColor="#ffffff"
                 android:textSize="16sp" />
         </LinearLayout>

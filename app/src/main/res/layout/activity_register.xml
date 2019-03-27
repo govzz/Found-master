@@ -16,52 +16,54 @@
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
+        android:hint="Enter User Name"
         android:inputType="text"
-        android:hint="请输入用户名"
         android:paddingLeft="8dp"
         android:textColorHint="@color/color999" />
+
     <EditText
         android:id="@+id/id_et_phone"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="4dp"
         android:background="#ffffff"
+        android:hint="Enrer Phone Number"
         android:inputType="text"
-        android:hint="请输入手机号码"
         android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
+        android:textColorHint="@color/color999" />
+
     <EditText
         android:id="@+id/id_et_password"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="4dp"
         android:background="#ffffff"
-        android:hint="请输入密码"
+        android:hint="Enter Password"
         android:inputType="textWebPassword"
         android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
+        android:textColorHint="@color/color999" />
 
     <EditText
         android:id="@+id/id_et_repassword"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:inputType="textWebPassword"
         android:layout_marginTop="4dp"
         android:background="#ffffff"
-        android:hint="重复输入密码"
+        android:hint="Enter Password Again"
+        android:inputType="textWebPassword"
         android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
+        android:textColorHint="@color/color999" />
 
 
     <Button
         android:id="@+id/id_btn_register"
         android:layout_width="match_parent"
-        android:background="@drawable/ic_phone_reg_bg"
-        android:textColor="@color/white"
         android:layout_height="wrap_content"
-        android:text="提交"
         android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="50dp" />
+        android:background="@drawable/ic_phone_reg_bg"
+        android:text="Done"
+        android:textColor="@color/white" />
 
 </LinearLayout>

@@ -20,9 +20,6 @@ import java.util.List;
  * 支持添加自定义头部布局；
  * 支持扩展多种item布局；
  * 支持设置recycler view点击/长按事件
- * @param <T>
- * @author smile
- * @link https://github.com/bodismile/BaseRecyclerAdapter
  */
 public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseRecyclerHolder> {
     /**

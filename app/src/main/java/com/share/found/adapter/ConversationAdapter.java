@@ -15,8 +15,8 @@ import java.util.Collection;
 import cn.bmob.newim.bean.BmobIMConversationType;
 
 /**
- * @author zhangqinzhi
- * @date 2019/2/20
+ * @author CQU_20161586 ZhaoYimin
+ * @date 2019/3/20
  */
 
 public class ConversationAdapter extends BaseRecyclerAdapter<Conversation> {

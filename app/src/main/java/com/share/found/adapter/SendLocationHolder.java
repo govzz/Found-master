@@ -66,7 +66,7 @@ public class SendLocationHolder extends BaseViewHolder {
               .placeholder(R.drawable.defalut_head)
               .into(iv_avatar);
     }
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
     String time = dateFormat.format(msg.getCreateTime());
     tv_time.setText(time);
 
@@ -86,14 +86,14 @@ public class SendLocationHolder extends BaseViewHolder {
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
 
     tv_location.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("经度：" + message.getLongitude() + ",维度：" + message.getLatitude());
+        toast("Longitude：" + message.getLongitude() + ",Latitude：" + message.getLatitude());
         if(onRecyclerViewListener!=null){
           onRecyclerViewListener.onItemClick(getAdapterPosition());
         }
@@ -124,7 +124,7 @@ public class SendLocationHolder extends BaseViewHolder {
           public void done(BmobIMMessage msg, BmobException e) {
             if (e == null) {
               tv_send_status.setVisibility(View.VISIBLE);
-              tv_send_status.setText("已发送");
+              tv_send_status.setText("Sent");
               iv_fail_resend.setVisibility(View.GONE);
               progress_load.setVisibility(View.GONE);
             } else {

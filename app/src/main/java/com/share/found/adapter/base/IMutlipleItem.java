@@ -3,7 +3,7 @@ package com.share.found.adapter.base;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/5/6.
+ * Created by CQU_20161586 ZhaoYimin on 2019/3/20.
  */
 public interface IMutlipleItem<T> {
 

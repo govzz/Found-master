@@ -51,14 +51,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 String name = etName.getText().toString();
                 String password = etPwd.getText().toString();
                 if (TextUtils.isEmpty(name)) {
-                    Toast.makeText(context, "请输入用户名", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Enter User name", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(context, "请输入密码", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Enter Password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                showProgressDialog(LoginActivity.this,"登录中...");
+                showProgressDialog(LoginActivity.this,"Loading...");
                 BmobUser bu2 = new BmobUser();
                 bu2.setUsername(name);
                 bu2.setPassword(password);
@@ -68,7 +68,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     public void done(BmobUser bmobUser, BmobException e) {
                         hidProgressDialog();
                         if (e == null) {
-                            Toast.makeText(context, "登录成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                             finish();
 

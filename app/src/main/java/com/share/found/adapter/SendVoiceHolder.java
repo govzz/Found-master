@@ -68,7 +68,7 @@ public class SendVoiceHolder extends BaseViewHolder {
                 .into(iv_avatar);
     }
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
     String time = dateFormat.format(msg.getCreateTime());
     tv_time.setText(time);
     //使用buildFromDB方法转化成指定类型的消息
@@ -108,7 +108,7 @@ public class SendVoiceHolder extends BaseViewHolder {
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
     //重发

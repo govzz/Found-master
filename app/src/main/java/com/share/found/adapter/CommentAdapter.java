@@ -105,7 +105,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 public void onClick(View v) {
                     User user = img.getUser();
                     if (BmobIM.getInstance().getCurrentStatus().getCode() != ConnectionStatus.CONNECTED.getCode()) {
-                        Toast.makeText(mContext,"尚未连接IM服务器",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext,"Not connected to IM server",Toast.LENGTH_SHORT).show();
                         return;
                     }
                     BmobIMUserInfo info = new BmobIMUserInfo(user.getObjectId(), user.getUsername(), user.getAvatar());

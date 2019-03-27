@@ -42,7 +42,7 @@ public class MySendActivity extends BaseActivity implements SwipeRefreshLayout.O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_send);
-        onSetTitle("我的发布");
+        onSetTitle("My release");
         init();
         getdata();
     }
@@ -71,15 +71,15 @@ public class MySendActivity extends BaseActivity implements SwipeRefreshLayout.O
             public void onItemClick(View view, final int position) {
 
                 new AlertDialog.Builder(MySendActivity.this)
-                        .setTitle("提示")
-                        .setMessage("确定删除此条记录吗?")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setTitle("Tips")
+                        .setMessage("Are you sure to delete this record?")
+                        .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.dismiss();
                                 delete(position);
                             }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -96,7 +96,7 @@ public class MySendActivity extends BaseActivity implements SwipeRefreshLayout.O
             public void done(BmobException e) {
                 if (e==null){
                     EventBus.getDefault().post(new HomEvent());
-                    onToast("删除成功");
+                    onToast("Delete successfully");
                     list.remove(position);
                     adapter.notifyDataSetChanged();
                 }

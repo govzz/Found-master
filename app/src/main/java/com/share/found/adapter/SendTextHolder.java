@@ -103,7 +103,7 @@ public class SendTextHolder extends BaseViewHolder implements View.OnClickListen
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击" + info.getName() + "的头像");
+        toast("Click" + info.getName() + "Profile Photo");
       }
     });
 
@@ -123,7 +123,7 @@ public class SendTextHolder extends BaseViewHolder implements View.OnClickListen
           public void done(BmobIMMessage msg, BmobException e) {
             if(e==null){
               tv_send_status.setVisibility(View.VISIBLE);
-              tv_send_status.setText("已发送");
+              tv_send_status.setText("Sent");
               iv_fail_resend.setVisibility(View.GONE);
               progress_load.setVisibility(View.GONE);
             }else{

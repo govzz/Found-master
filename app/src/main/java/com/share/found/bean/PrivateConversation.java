@@ -18,7 +18,7 @@ import cn.bmob.newim.bean.BmobIMMessageType;
 
 /**
  * 私聊会话
- * Created by Administrator on 2016/5/25.
+ * Created by CQU_20161586 on 2019/3/20.
  */
 public class PrivateConversation extends Conversation{
 
@@ -33,7 +33,7 @@ public class PrivateConversation extends Conversation{
             cName=conversation.getConversationTitle();
             if (TextUtils.isEmpty(cName)) cName = cId;
         }else{
-            cName="未知会话";
+            cName="Unknown Session";
         }
         List<BmobIMMessage> msgs =conversation.getMessages();
         if(msgs!=null && msgs.size()>0){
@@ -67,15 +67,15 @@ public class PrivateConversation extends Conversation{
             if(lastMsg.getMsgType().equals(BmobIMMessageType.TEXT.getType()) || lastMsg.getMsgType().equals("agree")){
                 return content;
             }else if(lastMsg.getMsgType().equals(BmobIMMessageType.IMAGE.getType())){
-                return "[图片]";
+                return "[Picture]";
             }else if(lastMsg.getMsgType().equals(BmobIMMessageType.VOICE.getType())){
-                return "[语音]";
+                return "[Speak]";
             }else if(lastMsg.getMsgType().equals(BmobIMMessageType.LOCATION.getType())){
-                return"[位置]";
+                return"[Location]";
             }else if(lastMsg.getMsgType().equals(BmobIMMessageType.VIDEO.getType())){
-                return "[视频]";
+                return "[Video]";
             }else{//开发者自定义的消息类型，需要自行处理
-                return "[未知]";
+                return "[Unknown]";
             }
         }else{//防止消息错乱
             return "";

@@ -43,7 +43,7 @@ public class PersonActivity extends BaseActivity implements View.OnClickListener
         context = this;
         ActivityManager.addActivity(this);
         setContentView(R.layout.activity_person_info);
-        onSetTitle("个人信息");
+        onSetTitle("Information");
         initView();
     }
 
@@ -116,9 +116,9 @@ public class PersonActivity extends BaseActivity implements View.OnClickListener
                     @Override
                     public void done(BmobException e) {
                         if(e==null){
-                            Toast.makeText(context, "图片上传成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Update Successfully", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(context, "图片上传失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Update Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -131,9 +131,9 @@ public class PersonActivity extends BaseActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.rl_logout:
                 new AlertDialog.Builder(PersonActivity.this)
-                        .setTitle("提示")
-                        .setMessage("确定退出吗?")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setTitle("Tips")
+                        .setMessage("Are you sure to quit?")
+                        .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(PersonActivity.this, LoginActivity.class));
@@ -141,7 +141,7 @@ public class PersonActivity extends BaseActivity implements View.OnClickListener
                                 BmobIM.getInstance().disConnect();
                                 dialogInterface.dismiss();
                             }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();

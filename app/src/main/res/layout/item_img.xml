@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:singleLine="true"
-                android:text="我的你的小啊11111111111111111111111111111111111111111111111111小苹果我的你的小啊小苹果我的你的小啊小苹果我的你的小啊小苹果我的你的小啊小苹果"
+                android:text="your YiDa"
                 android:textColor="@color/color999" />
 
         </LinearLayout>
@@ -72,15 +72,16 @@
           android:layout_height="wrap_content"
           android:padding="10dp">
       </com.zhy.view.flowlayout.TagFlowLayout>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/tv_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:text="刚刚"
-            android:textColor="@color/color999" />
+
+      <TextView
+          android:id="@+id/tv_time"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:layout_marginBottom="10dp"
+          android:maxLines="2"
+          android:text="just now"
+          android:textColor="@color/color999" />
     </LinearLayout>
 
 </LinearLayout>

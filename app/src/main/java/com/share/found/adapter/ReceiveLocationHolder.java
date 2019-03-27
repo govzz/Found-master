@@ -49,7 +49,7 @@ public class ReceiveLocationHolder extends BaseViewHolder {
               .placeholder(R.drawable.defalut_head)
               .into(iv_avatar);
     }
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
     String time = dateFormat.format(msg.getCreateTime());
     tv_time.setText(time);
     //
@@ -59,7 +59,7 @@ public class ReceiveLocationHolder extends BaseViewHolder {
     tv_location.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("经度：" + message.getLongitude() + ",维度：" + message.getLatitude());
+        toast("Longitude：" + message.getLongitude() + ",Latitude：" + message.getLatitude());
         if(onRecyclerViewListener!=null){
           onRecyclerViewListener.onItemClick(getAdapterPosition());
         }
@@ -78,7 +78,7 @@ public class ReceiveLocationHolder extends BaseViewHolder {
     iv_avatar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        toast("点击"+info.getName()+"头像");
+        toast("Click"+info.getName()+"Profile Photo");
       }
     });
   }

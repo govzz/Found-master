@@ -37,7 +37,7 @@ public class ConversationActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);
-        onSetTitle("会话");
+        onSetTitle("Conversation");
         initView();
         initData();
     }

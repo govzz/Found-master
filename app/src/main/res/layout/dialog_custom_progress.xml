@@ -19,13 +19,14 @@
         <ProgressBar
             android:layout_width="60dp"
             android:layout_height="60dp" />
+
         <TextView
             android:id="@+id/dialog_custom_progress_tv_content"
-            android:textSize="16sp"
-            android:layout_marginLeft="20dp"
-            android:textColor="@android:color/black"
-            android:text="登录中"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Loading"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

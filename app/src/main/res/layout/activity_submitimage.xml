@@ -15,11 +15,11 @@
         android:background="@drawable/dialog_bycamer"
         android:orientation="vertical" >
 
-         <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="拍照"
+            android:text="Take Photo"
             android:textColor="#107ED3"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="从相册选择"
+            android:text="Choose from Album"
             android:textColor="#107ED3"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -56,14 +56,14 @@
         android:id="@+id/button_cancle"
         android:layout_width="120dip"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="14dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/dialog_cancle_bg"
-        android:text="取消"
+        android:text="Cancel"
         android:textColor="#107ED3"
         android:textSize="18sp" />
 

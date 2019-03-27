@@ -21,15 +21,16 @@
             android:src="@drawable/defalut_head"
             app:civ_border_color="#FFFFFF"
             app:civ_border_width="2dp" />
+
         <TextView
-            android:layout_marginLeft="@dimen/margin_8"
             android:id="@+id/person_name"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="你好"
-            android:textSize="14sp"
-            android:textColor="#333" />
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_weight="1"
+            android:text="Hello"
+            android:textColor="#333"
+            android:textSize="14sp" />
         <ImageView
             android:id="@+id/iv_call"
             android:layout_width="wrap_content"
@@ -43,14 +44,15 @@
             android:padding="@dimen/margin_10"
             android:src="@drawable/icon_chat"/>
     </LinearLayout>
+
     <TextView
         android:id="@+id/trend_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
+        android:text="I put your headphones in the dorm!"
         android:textColor="#333"
-        android:textSize="14sp"
-        android:text="你的的的的的案底加拉到家了" />
+        android:textSize="14sp" />
     <ImageView
         android:layout_marginTop="5dp"
         android:id="@+id/iv_img"
@@ -69,17 +71,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="10分钟前" />
+            android:text="10 minutes ago" />
+
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="10分钟前" />
+            android:text="11 minutes ago" />
     </LinearLayout>
 </LinearLayout>

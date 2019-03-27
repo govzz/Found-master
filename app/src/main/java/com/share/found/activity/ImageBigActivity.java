@@ -14,7 +14,7 @@ public class ImageBigActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bigimage);
-        onSetTitle("图片");
+        onSetTitle("Photo");
         PhotoView iv =(PhotoView) findViewById(R.id.photo_view);
         String url = getIntent().getStringExtra("url");
         Glide.with(this).load(url).error(R.drawable.icon_fail).into(iv);

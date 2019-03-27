@@ -269,7 +269,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
 
             @Override
             public void onTimeChanged(int recordTime, String localPath) {
-                Logger.i("voice", "已录音长度:" + recordTime);
+                Logger.i("voice", "Recorded time:" + recordTime);
                 if (recordTime >= BmobRecordManager.MAX_RECORD_TIME) {// 1分钟结束，发送消息
                     // 需要重置按钮
                     btn_speak.setPressed(false);
@@ -292,10 +292,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     }
 
     /**
-     * 长按说话
-     *
-     * @author smile
-     * @date 2014-7-1 下午6:10:16
+     * 长按说
      */
     class VoiceTouchListener implements View.OnTouchListener {
         @Override
@@ -303,7 +300,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     if (!Util.checkSdCard()) {
-                        Toast.makeText(ChatActivity.this, "发送语音需要sdcard支持！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChatActivity.this, "Sending voice requires support of sdcard！", Toast.LENGTH_SHORT).show();
                         return false;
                     }
                     try {
@@ -332,7 +329,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
                     try {
                         if (event.getY() < 0) {// 放弃录音
                             recordManager.cancelRecording();
-                            Logger.i("voice", "放弃发送语音");
+                            Logger.i("voice", "Cancel sending voice");
                         } else {
                             int recordTime = recordManager.stopRecording();
                             if (recordTime > 1) {
@@ -358,8 +355,6 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     /**
      * 显示录音时间过短的Toast
      *
-     * @return void
-     * @Title: showShortToast
      */
     private Toast showShortToast() {
         if (toast == null) {
@@ -431,7 +426,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     @OnClick(R.id.btn_chat_send)
     public void onSendClick(View view) {
         if (BmobIM.getInstance().getCurrentStatus().getCode() != ConnectionStatus.CONNECTED.getCode()) {
-            Toast.makeText(ChatActivity.this, "尚未连接IM服务器", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChatActivity.this, "Not connected to IM server", Toast.LENGTH_SHORT).show();
             return;
         }
         sendMessage();
@@ -440,7 +435,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     @OnClick(R.id.tv_picture)
     public void onPictureClick(View view) {
         if (BmobIM.getInstance().getCurrentStatus().getCode() != ConnectionStatus.CONNECTED.getCode()) {
-            Toast.makeText(ChatActivity.this, "尚未连接IM服务器", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChatActivity.this, "Not connected to IM server", Toast.LENGTH_SHORT).show();
             return;
         }
         sendLocalImageMessage();
@@ -449,7 +444,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     @OnClick(R.id.tv_camera)
     public void onCameraClick(View view) {
         if (BmobIM.getInstance().getCurrentStatus().getCode() != ConnectionStatus.CONNECTED.getCode()) {
-            Toast.makeText(ChatActivity.this, "尚未连接IM服务器", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChatActivity.this, "Not connected to IM server", Toast.LENGTH_SHORT).show();
             return;
         }
         sendRemoteImageMessage();
@@ -458,7 +453,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     @OnClick(R.id.tv_location)
     public void onLocationClick(View view) {
         if (BmobIM.getInstance().getCurrentStatus().getCode() != ConnectionStatus.CONNECTED.getCode()) {
-            Toast.makeText(ChatActivity.this, "尚未连接IM服务器", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChatActivity.this, "Not connected to IM server", Toast.LENGTH_SHORT).show();
             return;
         }
         sendLocationMessage();
@@ -467,8 +462,6 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     /**
      * 根据是否点击笑脸来显示文本输入框的状态
      *
-     * @param isEmo 用于区分文字和表情
-     * @return void
      */
     private void showEditState(boolean isEmo) {
         edit_msg.setVisibility(View.VISIBLE);
@@ -513,7 +506,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     private void sendMessage() {
         String text = edit_msg.getText().toString();
         if (TextUtils.isEmpty(text.trim())) {
-            Toast.makeText(ChatActivity.this, "请输入内容", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChatActivity.this, "Input content", Toast.LENGTH_SHORT).show();
             return;
         }
         //TODO 发送消息：6.1、发送文本消息
@@ -553,7 +546,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
      */
     private void sendLocalAudioMessage() {
         //TODO 发送消息：6.4、发送本地音频文件消息
-        BmobIMAudioMessage audio = new BmobIMAudioMessage("此处替换为你本地的音频文件地址");
+        BmobIMAudioMessage audio = new BmobIMAudioMessage("Audio file address");
         mConversationManager.sendMessage(audio, listener);
     }
 
@@ -564,7 +557,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     private void sendRemoteAudioMessage() {
         //TODO 发送消息：6.5、发送本地音频文件消息
         BmobIMAudioMessage audio = new BmobIMAudioMessage();
-        audio.setRemoteUrl("此处替换为你远程的音频文件地址");
+        audio.setRemoteUrl("Audio file address");
         mConversationManager.sendMessage(audio, listener);
     }
 
@@ -572,7 +565,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
      * 发送本地视频文件
      */
     private void sendLocalVideoMessage() {
-        BmobIMVideoMessage video = new BmobIMVideoMessage("此处替换为你本地的视频文件地址");
+        BmobIMVideoMessage video = new BmobIMVideoMessage("Video file address");
         //TODO 发送消息：6.6、发送本地视频文件消息
         mConversationManager.sendMessage(video, listener);
     }
@@ -583,7 +576,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     private void sendRemoteVideoMessage() {
         //TODO 发送消息：6.7、发送本地音频文件消息
         BmobIMAudioMessage audio = new BmobIMAudioMessage();
-        audio.setRemoteUrl("此处替换为你远程的音频文件地址");
+        audio.setRemoteUrl("Audio file address");
         mConversationManager.sendMessage(audio, listener);
     }
 
@@ -592,7 +585,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
      */
     public void sendLocalFileMessage() {
         //TODO 发送消息：6.8、发送本地文件消息
-        BmobIMFileMessage file = new BmobIMFileMessage("此处替换为你本地的文件地址");
+        BmobIMFileMessage file = new BmobIMFileMessage("Local file address");
         mConversationManager.sendMessage(file, listener);
     }
 
@@ -602,24 +595,19 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     public void sendRemoteFileMessage() {
         //TODO 发送消息：6.9、发送远程文件消息
         BmobIMFileMessage file = new BmobIMFileMessage();
-        file.setRemoteUrl("此处替换为你远程的文件地址");
+        file.setRemoteUrl("Remote file address");
         mConversationManager.sendMessage(file, listener);
     }
 
     /**
      * 发送语音消息
-     *
-     * @param local
-     * @param length
-     * @return void
-     * @Title: sendVoiceMessage
      */
     private void sendVoiceMessage(String local, int length) {
         //TODO 发送消息：6.5、发送本地音频文件消息
         BmobIMAudioMessage audio = new BmobIMAudioMessage(local);
         //可设置额外信息-开发者设置的额外信息，需要开发者自己从extra中取出来
         Map<String, Object> map = new HashMap<>();
-        map.put("from", "优酷");
+        map.put("from", "Youtube");
         //TODO 自定义消息：7.1、给消息设置额外信息
         audio.setExtraMap(map);
         //设置语音文件时长：可选
@@ -634,9 +622,9 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     public void sendLocationMessage() {
         //TODO 发送消息：6.10、发送位置消息
         //测试数据，真实数据需要从地图SDK中获取
-        BmobIMLocationMessage location = new BmobIMLocationMessage("广州番禺区", 23.5, 112.0);
+        BmobIMLocationMessage location = new BmobIMLocationMessage("Guangzhou", 23.5, 112.0);
         Map<String, Object> map = new HashMap<>();
-        map.put("from", "百度地图");
+        map.put("from", "BaiduMap");
         location.setExtraMap(map);
         mConversationManager.sendMessage(location, listener);
     }
@@ -676,7 +664,6 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     /**
      * 首次加载，可设置msg为null，下拉刷新的时候，默认取消息表的第一个msg作为刷新的起始时间点，默认按照消息时间的降序排列
      *
-     * @param msg
      */
     public void queryMessages(BmobIMMessage msg) {
         //TODO 消息：5.2、查询指定会话的消息记录
@@ -704,7 +691,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     //TODO 消息接收：8.2、单个页面的自定义接收器
     @Override
     public void onMessageReceive(List<MessageEvent> list) {
-        Logger.i("聊天页面接收到消息：" + list.size());
+        Logger.i("Got a new message：" + list.size());
         //当注册页面消息监听时候，有消息（包含离线消息）到来时会回调该方法
         for (int i = 0; i < list.size(); i++) {
             addMessage2Chat(list.get(i));
@@ -714,7 +701,6 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
     /**
      * 添加消息到聊天界面中
      *
-     * @param event
      */
     private void addMessage2Chat(MessageEvent event) {
         BmobIMMessage msg = event.getMessage();
@@ -727,7 +713,7 @@ public class ChatActivity extends ParentWithNaviActivity implements MessageListH
             }
             scrollToBottom();
         } else {
-            Logger.i("不是与当前聊天对象的消息");
+            Logger.i("Not the message from current object");
         }
     }
 

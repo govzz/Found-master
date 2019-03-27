@@ -61,7 +61,7 @@ public class LocationActivity extends BaseActivity implements AMapLocationListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-        onSetTitle("选择地址");
+        onSetTitle("Select Address");
         mapView = findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         init();
@@ -70,7 +70,7 @@ public class LocationActivity extends BaseActivity implements AMapLocationListen
 
     private void init() {
         tvRight = findViewById(R.id.tv_right);
-        tvRight.setText("确定");
+        tvRight.setText("Confirm");
         tvRight.setVisibility(View.VISIBLE);
         tvRight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,7 +202,7 @@ public class LocationActivity extends BaseActivity implements AMapLocationListen
                 LatLonPoint latLonPoint=new LatLonPoint(lat,lon);
                 if (isFristEntry) {
                     firstLocation = new PoiItem(amapLocation.getBuildingId(), latLonPoint,
-                            "位置", amapLocation.getAddress());
+                            "Location", amapLocation.getAddress());
 
                     aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
                     //定位成功移动图层至定位区域
@@ -227,7 +227,7 @@ public class LocationActivity extends BaseActivity implements AMapLocationListen
         LatLonPoint point = new LatLonPoint(lat, lon);
         query = new PoiSearch.Query(
                 "",
-                "汽车维修|摩托车服务|餐饮服务|购物服务|生活服务|体育休闲服务|医疗保健服务|住宿服务|风景名胜|商务住宅|政府机构及社会团体|科教文化服务|交通设施服务|金融保险服务|道路附属设施|地名地址信息|公共设施",
+                "Car Maintenance|Food|Shopping|life|Sports|Health Care|Hotel|Travel|Business|Government|Public Facilities",
                 cityCode);
         // "公共设施|商务住宅"
         query.setPageSize(20);// 设置每页最多返回多少条poiitem
@@ -262,7 +262,7 @@ public class LocationActivity extends BaseActivity implements AMapLocationListen
             }
         } else {
             Toast.makeText(getApplicationContext(),
-                    "失败"+code, Toast.LENGTH_LONG).show();
+                    "Failed"+code, Toast.LENGTH_LONG).show();
         }
     }
 
