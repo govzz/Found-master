@@ -1,14 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        debug {
-            keyAlias 'found'
-            keyPassword 'found123'
-            storeFile file('D:/SoftwareEngineering/AndroidApplication/Found-master/found.jks')
-            storePassword 'found123'
-        }
-    }
+
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.share.found"
@@ -17,17 +10,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.debug
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
-        debug {
-            signingConfig signingConfigs.debug
-        }
+
     }
     lintOptions {
         checkReleaseBuilds false
